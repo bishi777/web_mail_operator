@@ -1,0 +1,137 @@
+.ribbon {
+  width:100%;
+ }
+ .ribbon li{
+  height: 16px;
+  width: auto;
+ }
+ .ribbon li:nth-child(1) {
+  background-color: #19BC9B;
+ }
+ .ribbon li:nth-child(2) {
+  background-color: #E67E23;
+ }
+ .ribbon li:nth-child(3) {
+  background-color: #3498DA;
+ }
+ .ribbon li:nth-child(4) {
+  background-color: #E64B3C;
+ }
+ .ribbon li:nth-child(5) {
+  background-color: #9B59B6;
+ }
+ .ribbon li:nth-child(6) {
+  background-color: #F1C40E;
+ }
+ .navbar-header{
+  background-color: #FBFEFC;
+  border-bottom: solid;
+  border-color: #F6F6F6;
+ }
+ .header-title {
+  width: fit-content;
+  margin: auto;     
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+ }
+ .header-description{
+  font-family: "Arial unicode ms";
+  width: fit-content;
+  margin: 0 auto;
+  padding-bottom: 1.5rem;
+ }
+ .nav-row{
+  display: flex;
+  justify-content: center;
+  width: auto;
+ }
+ .nav-row a{
+  text-decoration:none;
+ }
+ .nav-cols{
+  display: inline-block;
+  width: 100%;
+  color: #000000;
+ }
+ .nav-cols:hover{
+  color:#000000;
+  text-underline-offset:1em;
+  border-bottom: 3px solid #0858A5;
+  margin: -3px; 
+ } 
+ .nav-cols div{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-left: dotted;
+  border-color: #BBBBBB;
+ }
+ .sb-contents{
+  margin-top: 2rem;
+  background-color: #F1F4F5;
+ }
+ .sb-content{
+  width: 100%;
+  display: inline-flex;
+  margin-top: 1rem;
+  background-color: white;
+ }
+ .sb-logo{
+  margin: 12px;
+ }
+ .sb-content-title{
+  width: 100%;
+  margin-top: 12px;
+ }
+ .sb-content-title{
+  
+ }
+ .sb-content-match{
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+ }
+ .sb-content-opponent-a{
+  width: 40%;
+  text-align: right;
+  margin-right: 1rem;
+ }
+ .sb-content-opponent-b{
+  width: 40%;
+  margin-left: 1rem;
+ }
+ .odds-table{
+  width: 100%;
+ }
+ 
+ .sb-table{
+  width:inherit;
+  background-color: #343434;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  
+  border:1px;
+ }
+ .odds{
+  border: solid 1px grey;
+  margin: 0.5rem;
+ 
+ }
+ .sb-table th{
+  padding: 0.5rem;
+ }
+ .sb-table td{
+  padding: 0.5rem;
+ }
+ 
+ .sb-footer{
+  margin-top: 2rem;
+  background-color: #313B41;
+  color:white;
+ }
+ .sb-footer p{
+  text-align: center;
+ }
+ 
+ 

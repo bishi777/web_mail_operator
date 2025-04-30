@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container">
+ <h1>お知らせ</h1>
+ <p>2025/1/30 </p>
+ <p>Windows版version1.2のベータ版をアップロードしました。</p>
+ <br>
+ <pre>
+  主な変更点
+  ・ハッピーメール足跡付け
+    キャラを選択できるようになりました。
+  ・ハッピーメール掲示板再投稿、足跡返し
+    マッチングリストにマッチしたユーザーがいない場合に処理が正常に動かないのを修正しました。
+  ・チェックメール
+    サイト側の仕様変更で正常に動作しないのを修正しました。
+
+
+ </pre>
+ <!-- <p>9/13 リリースしました。</p>
+ <p>10/1 Windows版をリリースしました。</p> -->
+
+</div>
+  
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+
+{% include "footer.html" %}
+{% endblock %}

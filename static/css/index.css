@@ -1,0 +1,73 @@
+.fsize{
+  font-size: 24px;
+  text-align: center;
+}
+
+.container {
+  margin-top: 20px;
+  width: 80%; /* 横幅を80%に設定 */
+  max-width: 900px; /* 最大幅を900pxに設定 */
+  margin: 40px auto 0 auto; 
+  padding: 40px; /* パディングを増やして余裕を持たせる */
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 1.8; /* 行間を少し広げてテキストを読みやすくする */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd; /* 枠線の色 */
+}
+
+.styled-table thead tr {
+  background-color: #f2f2f2;
+}
+
+.styled-table tbody tr {
+  background-color: #ffffff;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+}

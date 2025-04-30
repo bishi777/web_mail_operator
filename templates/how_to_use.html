@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container">
+  <p>下記の中からお使いのPC環境に合ったzipファイルをダウンロードして、README.pdfを参照してください。</p>
+  
+  <h1>リリース版</h1>
+  <div class="download-link"></div>
+  <h2>Mac</h2>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>ダウンロード</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.2</td>
+        <td><a href="{% static 'downloads/mac/meruopetyan_m_70130.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+      <tr>
+        <td>1.1</td>
+        <td><a href="{% static 'downloads/mac/meruopetyan_m_61108.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+      <tr>
+        <td>1.0</td>
+        <td><a href="{% static 'downloads/mac/20240914_release.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Windows</h2>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>ダウンロード</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.2</td>
+        <td><a href="{% static 'downloads/win/meruopetyan_w_70130.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+      <tr>
+        <td>1.1</td>
+        <td><a href="{% static 'downloads/win/meruopetyan_w_61106_2.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+      <tr>
+        <td>1.0</td>
+        <td><a href="{% static 'downloads/win/meruopewin60927.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+  <!-- <h1>ベータ版</h1>
+  <h2>Windows</h2>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>ダウンロード</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>β03</td>
+        <td><a href="{% static 'downloads/win/meruopewin61013.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+      <tr>
+        <td>β02</td>
+        <td><a href="{% static 'downloads/win/meruopewin60927.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+      <tr>
+        <td>β01</td>
+        <td><a href="{% static 'downloads/win/meruopewin_60922.zip' %}" download>
+          <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <h2>Mac</h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>ダウンロード</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>β04</td>
+          <td><a href="{% static 'downloads/mac/meruopetyan61013.zip' %}" download>
+            <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+        </tr>
+        <tr>
+          <td>β03</td>
+          <td><a href="{% static 'downloads/mac/meruopetyan_60922.zip' %}" download>
+            <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+        </tr>
+        <tr>
+          <td>β02</td>
+          <td><a href="{% static 'downloads/mac/meruopetyan69010.zip' %}" download>
+            <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+        </tr>
+        <tr>
+          <td>β</td>
+          <td><a href="{% static 'downloads/mac/meruopetyan.zip' %}" download>
+            <img src="{% static 'img/download_icon.png' %}" alt="Download Icon" /></a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <br>
+    <hr class="section-divider">
+    <br>
+    <h1>推奨目安環境</h1>
+    <h2>Mac</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OS</td>
+            <td>macOS 13	Ventura 相当以上</td>
+          </tr>
+          <tr>
+            <td>CPU</td>
+            <td>Apple M1 相当以上</td>
+          </tr>
+          <tr>
+            <td>メインメモリ</td>
+            <td>8GB 以上</td>
+          </tr>
+          
+          <tr>
+            <td>HDD/SSD 空き容量</td>
+            <td>10 GB 以上の空き容量</td>
+          </tr>
+          <tr>
+            <td>通信環境</td>
+            <td>インターネットへ常時接続可能な環境</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <h2>Windows</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OS</td>
+            <td>Windows 11 Pro 相当以上</td>
+          </tr>
+          <tr>
+            <td>ﾌﾟﾛｾｯｻ</td>
+            <td>Intel(R) Core(TM) i5-7300U CPU 相当以上</td>
+          </tr>
+          <tr>
+            <td>メインメモリ</td>
+            <td>8GB 以上</td>
+          </tr>
+          <tr>
+            <td>HDD/SSD 空き容量</td>
+            <td>10 GB 以上の空き容量</td>
+          </tr>
+          <tr>
+            <td>通信環境</td>
+            <td>インターネットへ常時接続可能な環境</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+</div>
+  
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+
+{% include "footer.html" %}
+{% endblock %}
