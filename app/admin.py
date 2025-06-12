@@ -179,7 +179,9 @@ class JmailAdmin(admin.ModelAdmin):
     list_display = ['name',  'login_id', 'is_active','memo']
     fields = [
         'user_id', 'name', 'login_id', 'password', 'post_title', 
-        'post_contents', 'return_foot_message', 'fst_message', 'chara_image', 'conditions_message', 
+        'post_contents', 'return_foot_message', 'fst_message', 'second_message', 'conditions_message', 
+        'chara_image','mail_address_image',
+        'mail_address', 'gmail_password', 
         'is_active', 'memo'
         ]
     
