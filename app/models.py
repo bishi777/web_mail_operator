@@ -256,13 +256,12 @@ class Pcmax(models.Model):
     verbose_name_plural = "PCMAX"
 
 class Jmail(models.Model):
-
   name = models.CharField(max_length=30, blank=True, null=True, verbose_name="名前")
   user_id = models.ForeignKey(User, on_delete=models.CASCADE)  
   login_id = models.CharField(max_length=30, blank=True, null=True, verbose_name="ログインID")
   password = models.CharField(max_length=30, blank=True, null=True, verbose_name="パスワード")
   fst_message = models.TextField(blank=True, null=True, verbose_name="1stメール")
-  chara_image = models.ImageField(upload_to='chara_images/', null=True, blank=True, verbose_name="送付画像")
+  chara_image = models.ImageField(upload_to='chara_images/', null=True, blank=True, verbose_name="キャラ画像")
   mail_address_image = models.ImageField(upload_to='chara_images/', null=True, blank=True, verbose_name="メルアド画像")
   return_foot_message = models.TextField(blank=True, null=True, verbose_name="足跡返し")
   conditions_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
