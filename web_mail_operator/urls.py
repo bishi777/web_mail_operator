@@ -17,7 +17,8 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/user-data/', views.UserDataView.as_view(), name='user-data'),
     path('api/user-data/<int:user_id>/', views.UserDataView.as_view(),),  # PATCHリクエスト用のURL
-]
+    path('api/update-submitted-users/', views.update_submitted_users_by_login),
+]   
 # 開発環境でメディアファイルを提供
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -9,6 +9,7 @@ from .serializers import *
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 
 
 class IndexView(TemplateView):
@@ -55,7 +56,7 @@ class UserDataView(APIView):
                 ikukuru_data = Ikukuru.objects.filter(user_id=user.id, is_active=True)
                 ikukuru_serializer = IkukuruSerializer(ikukuru_data, many=True)
 
-                # print(userprofile_serializer.data,)
+                print(jmail_serializer.data,)
                 return Response({
                     'happymail': happymail_serializer.data,
                     'pcmax': pcmax_serializer.data,
@@ -97,3 +98,20 @@ class UserDataView(APIView):
             return Response({'error': 'UserProfile not found'}, status=status.HTTP_404_NOT_FOUND)
         except User.DoesNotExist:
             return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+@api_view(['POST'])
+def update_submitted_users_by_login(request):
+    login_id = request.data.get('login_id')
+    password = request.data.get('password')
+    new_submitted_users = request.data.get('submitted_users')
+    # バリデーション
+    if not all([login_id, password, isinstance(new_submitted_users, list)]):
+        return Response({'error': 'login_id, password, submitted_users（リスト）が必要です'}, status=400)
+
+    try:
+        jmail = Jmail.objects.get(login_id=login_id, password=password)
+        jmail.submitted_users = new_submitted_users
+        jmail.save()
+        return Response({'status': '✅ 更新完了'})
+    except Jmail.DoesNotExist:
+        return Response({'error': '該当データが見つかりません'}, status=404)
