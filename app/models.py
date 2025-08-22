@@ -241,6 +241,7 @@ class Pcmax(models.Model):
   housework = models.CharField(max_length=20,  choices=housework_list, null=True, blank=True, verbose_name="家事・育児")
   sociability = models.CharField(max_length=20,  choices=sociability_list, null=True, blank=True, verbose_name="社交性")
   iikamo_sumitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list, verbose_name="いいかも送信済みユーザー")
+  confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
   memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
 
