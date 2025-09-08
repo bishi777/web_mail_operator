@@ -104,6 +104,7 @@ def update_submitted_users_by_login(request):
     login_id = request.data.get('login_id')
     password = request.data.get('password')
     new_submitted_users = request.data.get('submitted_users')
+    new_young_submitted_users = request.data.get('young_submitted_users')
     # バリデーション
     if not all([login_id, password, isinstance(new_submitted_users, list)]):
         return Response({'error': 'login_id, password, submitted_users（リスト）が必要です'}, status=400)
@@ -111,6 +112,7 @@ def update_submitted_users_by_login(request):
     try:
         jmail = Jmail.objects.get(login_id=login_id, password=password)
         jmail.submitted_users = new_submitted_users
+        jmail.young_submitted_users = new_young_submitted_users
         jmail.save()
         return Response({'status': '✅ 更新完了'})
     except Jmail.DoesNotExist:
