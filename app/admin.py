@@ -185,7 +185,7 @@ class JmailAdmin(admin.ModelAdmin):
         'second_message',  'confirmation_mail',
         'chara_image','mail_address_image',
         'mail_address', 'gmail_password', 
-        'is_active', 'memo', 'submitted_users', 
+        'is_active', 'memo', 'submitted_users', 'young_submitted_users',
         ]
     
     def get_fields(self, request, obj=None):

@@ -278,6 +278,7 @@ class Jmail(models.Model):
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
   memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
   submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
+  young_submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
   
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
