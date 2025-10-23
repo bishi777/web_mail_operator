@@ -111,7 +111,8 @@ class HappymailAdmin(admin.ModelAdmin):
     fields = [
         'user_id', 'name', 'login_id', 'password', 'post_title', 
         'post_contents', 'return_foot_message', 'fst_message',
-        'post_return_message',  'second_message', 'confirmation_mail',
+        'post_return_message',  'second_message', 
+        'condition_message', 'confirmation_mail',
         'mail_address', 'gmail_password',
         'chara_image', "age", "activity_area", "detail_activity_area",
         "birth_place", "blood_type", "constellation", "height",
