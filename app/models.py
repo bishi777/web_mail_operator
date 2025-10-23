@@ -81,6 +81,7 @@ class Happymail(models.Model):
   post_return_message = models.TextField(blank=True, null=True, verbose_name="掲示板からの返信に対するメッセージ")
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
   confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
+  condition_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
   mail_address = models.EmailField(blank=True, null=True, verbose_name="Gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   age = models.CharField(max_length=6, choices=age_list, blank=True, null=True, verbose_name="年齢")
@@ -106,7 +107,7 @@ class Happymail(models.Model):
   brothers_and_sisters = models.CharField(max_length=20, choices=brothers_and_sisters_list, null=True, blank=True, verbose_name="兄弟姉妹")
   until_we_met = models.CharField(max_length=20, choices=until_we_met_list, null=True, blank=True, verbose_name="出会うまでの希望")
   date_expenses = models.CharField(max_length=20, choices=date_expenses_list, null=True, blank=True, verbose_name="初回デート費用")
-  memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
+  memo = models.CharField(max_length=300,blank=True, null=True, verbose_name="メモ")
 
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
@@ -279,7 +280,7 @@ class Jmail(models.Model):
   memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
   submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
   young_submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
-  
+
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
   
