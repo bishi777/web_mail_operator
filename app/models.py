@@ -107,7 +107,7 @@ class Happymail(models.Model):
   brothers_and_sisters = models.CharField(max_length=20, choices=brothers_and_sisters_list, null=True, blank=True, verbose_name="兄弟姉妹")
   until_we_met = models.CharField(max_length=20, choices=until_we_met_list, null=True, blank=True, verbose_name="出会うまでの希望")
   date_expenses = models.CharField(max_length=20, choices=date_expenses_list, null=True, blank=True, verbose_name="初回デート費用")
-  memo = models.CharField(max_length=300,blank=True, null=True, verbose_name="メモ")
+  memo = models.TextField(blank=True, null=True, verbose_name="メモ")
 
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
