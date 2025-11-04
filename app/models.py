@@ -218,6 +218,7 @@ class Pcmax(models.Model):
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
   condition_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
   return_foot_message = models.TextField(blank=True, null=True, verbose_name="足跡返し")
+  two_message_flug = models.BooleanField(default=False, verbose_name="2通メール送信フラグ")
   mail_address = models.EmailField(blank=True, null=True, verbose_name="Gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   date_of_birth = models.IntegerField(blank=True, null=True, verbose_name="誕生日(８桁の数字)")
