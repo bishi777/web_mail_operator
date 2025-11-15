@@ -283,6 +283,19 @@ class Jmail(models.Model):
   submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
   young_submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
 
+  def save(self, *args, **kwargs):
+    # 新規作成時は previous login_id が無いので比較だけする
+    if self.pk is not None:
+      # DBにある元のデータを取得
+      old = Jmail.objects.get(pk=self.pk)
+
+      # login_id が変更された場合のみ
+      if old.login_id != self.login_id:
+        self.submitted_users = []
+        self.young_submitted_users = []
+
+    super().save(*args, **kwargs)
+
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
   
