@@ -82,6 +82,7 @@ class Happymail(models.Model):
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
   confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
   condition_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
+  self_promotion = models.TextField(blank=True, null=True, verbose_name="自己紹介")
   mail_address = models.EmailField(blank=True, null=True, verbose_name="Gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   age = models.CharField(max_length=6, choices=age_list, blank=True, null=True, verbose_name="年齢")
