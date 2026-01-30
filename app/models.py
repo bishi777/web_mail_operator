@@ -109,6 +109,7 @@ class Happymail(models.Model):
   until_we_met = models.CharField(max_length=20, choices=until_we_met_list, null=True, blank=True, verbose_name="出会うまでの希望")
   date_expenses = models.CharField(max_length=20, choices=date_expenses_list, null=True, blank=True, verbose_name="初回デート費用")
   memo = models.TextField(blank=True, null=True, verbose_name="メモ")
+  system_prompt = models.TextField(blank=True, null=True, verbose_name="システムプロンプト")
 
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
@@ -251,6 +252,7 @@ class Pcmax(models.Model):
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
   fst_flug = models.BooleanField(default=True, verbose_name="fstフラグ")
   memo = models.TextField(blank=True, null=True, verbose_name="メモ")
+  system_prompt = models.TextField(blank=True, null=True, verbose_name="システムプロンプト")
 
   
   def __str__(self):
@@ -283,7 +285,7 @@ class Jmail(models.Model):
   memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
   submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
   young_submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
-
+  system_prompt = models.TextField(blank=True, null=True, verbose_name="システムプロンプト")
   def save(self, *args, **kwargs):
     # 新規作成時は previous login_id が無いので比較だけする
     if self.pk is not None:

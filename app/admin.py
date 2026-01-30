@@ -65,7 +65,8 @@ class PcmaxAdmin(admin.ModelAdmin):
         'freetime', 'car_ownership', 'smoking', 'ecchiness_level', 'sake', 'process_before_meeting', 
         'first_date_cost', 'travel', 'birth_place', 'education', 'annual_income', 'roommate', 
         'marry', 'child', 'housework', 'sociability', 'fst_flug',
-        'memo', 'two_message_flug','is_active'
+        'memo', 'two_message_flug',
+        'system_prompt', 'is_active'
               )
 
     def get_queryset(self, request):
@@ -122,6 +123,7 @@ class HappymailAdmin(admin.ModelAdmin):
         "relationship_status", "having_children", "intention_to_marry",
         "smoking", "sake", "car_ownership","roommate", 
         "brothers_and_sisters", "until_we_met","date_expenses", 
+        'system_prompt', 
         'is_active', 'memo'
         ]
 
@@ -188,6 +190,7 @@ class JmailAdmin(admin.ModelAdmin):
         'second_message',  'confirmation_mail',
         'chara_image','mail_address_image',
         'mail_address', 'gmail_password', 
+        'system_prompt', 
         'is_active', 'memo', 'submitted_users', 'young_submitted_users',
         ]
     
