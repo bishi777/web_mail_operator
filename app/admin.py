@@ -62,11 +62,11 @@ class PcmaxAdmin(admin.ModelAdmin):
         'mail_address', 'gmail_password',
         'date_of_birth', 'self_promotion', 
         'height', 'body_shape', 'blood_type', 'activity_area', 'detail_activity_area', 'profession', 
-        'freetime', 'car_ownership', 'smoking', 'ecchiness_level', 'sake', 'process_before_meeting', 
-        'first_date_cost', 'travel', 'birth_place', 'education', 'annual_income', 'roommate', 
+        'freetime', 'car_ownership', 'smoking', 'ecchiness_level', 'sake', 'process_before_meeting',
+        'first_date_cost', 'travel', 'birth_place', 'education', 'annual_income', 'roommate',
         'marry', 'child', 'housework', 'sociability', 'fst_flug',
-        'memo', 'two_message_flug',
-        'system_prompt', 'is_active'
+        'two_message_flug',
+        'system_prompt', 'memo', 'is_active'
               )
 
     def get_queryset(self, request):
