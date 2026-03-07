@@ -108,6 +108,11 @@ class Happymail(models.Model):
   brothers_and_sisters = models.CharField(max_length=20, choices=brothers_and_sisters_list, null=True, blank=True, verbose_name="兄弟姉妹")
   until_we_met = models.CharField(max_length=20, choices=until_we_met_list, null=True, blank=True, verbose_name="出会うまでの希望")
   date_expenses = models.CharField(max_length=20, choices=date_expenses_list, null=True, blank=True, verbose_name="初回デート費用")
+  prof_search_area = models.CharField(max_length=200,  null=True, blank=True, verbose_name="プロフィール検索エリア")
+  prof_search_youngest_age = models.CharField(max_length=10, choices=age_list,null=True, blank=True, verbose_name="プロフィール検索希望年齢(下)")
+  prof_search_oldest_age = models.CharField(max_length=10, choices=age_list, null=True, blank=True, verbose_name="プロフィール検索希望年齢(上)")
+  prof_search_height_min = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="プロフィール検索希望身長(下)")
+  prof_search_height_max = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="プロフィール検索希望身長(上)")
   memo = models.TextField(blank=True, null=True, verbose_name="メモ")
   system_prompt = models.TextField(blank=True, null=True, verbose_name="システムプロンプト")
 
