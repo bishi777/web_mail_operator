@@ -191,6 +191,8 @@ class JmailAdmin(admin.ModelAdmin):
         'second_message',  'confirmation_mail',
         'chara_image','mail_address_image',
         'mail_address', 'gmail_password', 
+        'self_promotion', 'activity_area', 'detail_activity_area', 'age', 'job',
+        'looks','height', 'body_shape','personality','sexiness','blood_type',
         'system_prompt', 
         'is_active', 'memo', 'submitted_users', 'young_submitted_users',
         ]
