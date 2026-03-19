@@ -190,7 +190,7 @@ class JmailAdmin(admin.ModelAdmin):
         'post_contents', 'return_foot_message', 'fst_message', 'post_return_message',
         'second_message',  'confirmation_mail',
         'chara_image','mail_address_image',
-        'mail_address', 'gmail_password', 
+        'mail_address', 'gmail_password', 'things_interesting',
         'self_promotion', 'activity_area', 'detail_activity_area', 'age', 'job',
         'looks','height', 'body_shape','personality','sexiness','blood_type',
         'system_prompt', 

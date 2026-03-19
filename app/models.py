@@ -368,8 +368,8 @@ class Jmail(models.Model):
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   post_return_message = models.TextField(blank=True, null=True, verbose_name="掲示板からの返信に対するメッセージ")
   confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
-  self_promotion = models.TextField(blank=True, null=True, verbose_name="自己紹介")
-  activity_area = models.CharField(max_length=5, choices=activity_area_list, null=True, blank=True, verbose_name="移住地")
+  self_promotion = models.TextField(blank=True, null=True, verbose_name="自己PR")
+  activity_area = models.CharField(max_length=5, choices=activity_area_list, null=True, blank=True, verbose_name="居住地")
   detail_activity_area = models.CharField(max_length=10, blank=True, null=True, verbose_name="市区町村")
   age = models.CharField(max_length=10, choices=age_list, null=True, blank=True, verbose_name="年齢")
   job = models.CharField(max_length=25,  null=True, blank=True, verbose_name="職業")
@@ -379,7 +379,6 @@ class Jmail(models.Model):
   personality = models.CharField(max_length=20, choices=personality_list, null=True, blank=True, verbose_name="性格")
   sexiness = models.CharField(max_length=10, choices=sexiness_list, null=True, blank=True, verbose_name="エッチ度")
   blood_type = models.CharField(max_length=5, choices=blood_type_list, null=True, blank=True, verbose_name="血液型")
-
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
   memo = models.TextField(blank=True, null=True, verbose_name="メモ")
   submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
