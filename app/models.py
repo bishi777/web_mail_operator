@@ -283,6 +283,75 @@ class Pcmax(models.Model):
     verbose_name_plural = "PCMAX"
 
 class Jmail(models.Model):
+  blood_type_list = [
+     ("A型","A型"), 
+    ("B型","B型"), ("O型","O型"), ( "AB型", "AB型"), 
+    
+    ]
+  sexiness_list = [
+    ("★", "★"), ("★★", "★★"), ("★★★", "★★★"), ("★★★★", "★★★★"), ("★★★★★", "★★★★★")
+  ]
+  personality_list = [
+    ("明るい", "明るい"), ("面白い", "面白い"), ("社交的", "社交的"), ("やさしい", "やさしい"), ("積極的", "積極的"), 
+    ("甘えん坊", "甘えん坊"),("穏やか", "穏やか"), ("寂しがり", "寂しがり"), ("社交的", "社交的"), 
+    ]
+  body_shape_list = [
+    ("細身", "細身"),
+    ("キモチ細身","キモチ細身"),
+    ("標準", "標準"), 
+    ("ナイスバディー","ナイスバディー"), 
+    ("グラマー", "グラマー"), 
+    ]
+  height_list = [
+    ("150～154cm","150～154cm"), ("155～159cm","155～159cm"), 
+    ("160～164cm","160～164cm"), ("165～169cm","165～169cm"), 
+    ("170～174cm","170～174cm"), ("175～179cm","175～179cm"),
+   
+  ]
+  age_list = [
+     ("18~21", "18~21"),
+     ("22~25", "22~25"),
+     ("26~29", "26~29"),
+  ]
+  activity_area_list = [
+    ("東京都", "東京都")
+    # "神奈川県", "埼玉県", "千葉県"
+    ]
+  detail_activity_area_tokyo = [
+    ("千代田区","千代田区"), ( "中央区", "中央区"), ("港区","港区"), ( "新宿区", "新宿区"), ( "文京区", "文京区"),
+    ("台東区","台東区"), ("品川区","品川区"), ( "目黒区", "目黒区"), ( "大田区", "大田区"), ( "世田谷区", "世田谷区"),
+    ( "渋谷区", "渋谷区"), (  "中野区",  "中野区"), ( "杉並区" "杉並区"), ("豊島区","豊島区"), ( "北区", "北区"),
+    ("荒川区","荒川区"), ( "板橋区", "板橋区"), ("練馬区","練馬区"), ("武蔵野市",  "武蔵野市"),   
+  ]
+  list_of_things_interesting = [
+    "恋愛","婚活",
+    "遊び友達",
+    "恋人探し",
+    "ゲーム",
+    "カフェ友達",
+    "外国人",
+    "趣味友達",
+    "食べ・飲み友達",
+    "悩み相談",
+    "合コン",
+    "ドライブ",
+    "アニメ・漫画",
+    "スポーツ・フィットネス",
+    "カラオケ",
+    "ギャンブル",
+    "ショッピング",
+    "ヤリモクNG",
+    "大人の関係",
+    "テレＨ・メールＨ",
+    "ドライな関係",
+    "セフレ",
+    "不倫・浮気",
+    "コスプレ",
+    "SM",
+    "特殊プレイ",
+    "3P・スワッピング",
+    "写真・動画",
+  ]
   name = models.CharField(max_length=30, blank=True, null=True, verbose_name="名前")
   user_id = models.ForeignKey(User, on_delete=models.CASCADE)  
   login_id = models.CharField(max_length=30, blank=True, null=True, verbose_name="ログインID")
@@ -299,11 +368,29 @@ class Jmail(models.Model):
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   post_return_message = models.TextField(blank=True, null=True, verbose_name="掲示板からの返信に対するメッセージ")
   confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
+  self_promotion = models.TextField(blank=True, null=True, verbose_name="自己紹介")
+  activity_area = models.CharField(max_length=5, choices=activity_area_list, null=True, blank=True, verbose_name="移住地")
+  detail_activity_area = models.CharField(max_length=10, blank=True, null=True, verbose_name="市区町村")
+  age = models.CharField(max_length=10, choices=age_list, null=True, blank=True, verbose_name="年齢")
+  job = models.CharField(max_length=25,  null=True, blank=True, verbose_name="職業")
+  looks = models.CharField(max_length=25,  null=True, blank=True, verbose_name="ルックス")
+  height = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="身長")
+  body_shape = models.CharField(max_length=20, choices=body_shape_list, null=True, blank=True, verbose_name="スタイル")
+  personality = models.CharField(max_length=20, choices=personality_list, null=True, blank=True, verbose_name="性格")
+  sexiness = models.CharField(max_length=10, choices=sexiness_list, null=True, blank=True, verbose_name="エッチ度")
+  blood_type = models.CharField(max_length=5, choices=blood_type_list, null=True, blank=True, verbose_name="血液型")
+
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
-  memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
+  memo = models.TextField(blank=True, null=True, verbose_name="メモ")
   submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
   young_submitted_users = ArrayField(models.CharField(max_length=100),blank=True,default=list)
   system_prompt = models.TextField(blank=True, null=True, verbose_name="システムプロンプト")
+  things_interesting = ArrayField(
+    models.CharField(max_length=30, choices=[(v, v) for v in list_of_things_interesting]),
+    blank=True,
+    default=list,
+    verbose_name="興味があること"
+  )
   def save(self, *args, **kwargs):
     # 新規作成時は previous login_id が無いので比較だけする
     if self.pk is not None:
@@ -325,6 +412,7 @@ class Jmail(models.Model):
     db_table = 'jmail'
     verbose_name = "Jmail"
     verbose_name_plural = "Jmail"
+
 
 class Ikukuru(models.Model):
   name = models.CharField(max_length=30, blank=True, null=True, verbose_name="名前")
