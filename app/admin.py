@@ -5,6 +5,20 @@ from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.admin import UserAdmin
+from django import forms
+
+
+class JmailAdminForm(forms.ModelForm):
+    things_interesting = forms.MultipleChoiceField(
+        choices=[(v, v) for v in Jmail.list_of_things_interesting],
+        widget=forms.CheckboxSelectMultiple,
+        required=False,
+        label="興味があること"
+    )
+
+    class Meta:
+        model = Jmail
+        fields = '__all__'
 
 
 class UserProfileAdmin(admin.ModelAdmin):
@@ -184,6 +198,7 @@ class HappymailAdmin(admin.ModelAdmin):
 admin.site.register(Happymail, HappymailAdmin)
 
 class JmailAdmin(admin.ModelAdmin):
+    form = JmailAdminForm
     list_display = ['name',  'login_id', 'is_active','memo']
     fields = [
         'user_id', 'name', 'login_id', 'password', 'post_title', 
