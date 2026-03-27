@@ -438,6 +438,7 @@ class Ikukuru(models.Model):
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
   condition_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
   confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
+  chara_image = models.ImageField(upload_to='chara_images/', null=True, blank=True, verbose_name="キャラ画像")
   self_promotion = models.TextField(blank=True, null=True, verbose_name="自己紹介")
   height = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="身長")
   body_shape = models.CharField(max_length=20, choices=body_shape_list, null=True, blank=True, verbose_name="スタイル")
