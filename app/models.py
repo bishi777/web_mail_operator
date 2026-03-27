@@ -414,17 +414,41 @@ class Jmail(models.Model):
 
 
 class Ikukuru(models.Model):
+  blood_type_list = [
+     ("非公開", "非公開"), ( "A型","A型"), 
+    ("B型","B型"), ("O型","型"), ( "AB型", "AB型"), 
+    ]
+  height_list = [
+     ("155～159","155～159"), 
+  ]
+  body_shape_list = [
+    ("スリム", "スリム"),
+    ("普通", "普通"), 
+    ("グラマー", "グラマー"), 
+    ("巨乳", "巨乳"),
+    ("ナイスバディ", "ナイスバディ"),
+    ]
+
   name = models.CharField(max_length=30, blank=True, null=True, verbose_name="名前")
   user_id = models.ForeignKey(User, on_delete=models.CASCADE)  
   login_mail_address = models.EmailField(null=True, blank=True, verbose_name="ログインメールアドレス")
   password = models.CharField(max_length=30, blank=True, null=True, verbose_name="ログインパスワード")
   fst_message = models.TextField(blank=True, null=True, verbose_name="1stメール")
+  return_foot_message = models.TextField(blank=True, null=True, verbose_name="足跡返し")
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
   condition_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
+  confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
+  self_promotion = models.TextField(blank=True, null=True, verbose_name="自己紹介")
+  height = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="身長")
+  body_shape = models.CharField(max_length=20, choices=body_shape_list, null=True, blank=True, verbose_name="スタイル")
+  blood_type = models.CharField(max_length=5, choices=blood_type_list, null=True, blank=True, verbose_name="血液型")
+  _type = models.CharField(max_length=30, blank=True, null=True, verbose_name="あなたのタイプ")
+  detail_activity_area = models.CharField(max_length=10, blank=True, null=True, verbose_name="よく遊ぶ地域")
+  relationship_status = models.CharField(max_length=10, blank=True, null=True, verbose_name="交際ステータス")
   gmail_address = models.EmailField(null=True, blank=True, verbose_name="gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
-  memo = models.CharField(max_length=30,blank=True, null=True, verbose_name="メモ")
+  memo = models.TextField(blank=True, null=True, verbose_name="メモ")
   
   def __str__(self):
     return "イククル" # ここで表示したいフィールドを選択します
