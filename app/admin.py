@@ -261,7 +261,7 @@ class IkukuruAdmin(admin.ModelAdmin):
     fields = [
         'user_id', 'name', 'login_mail_address', 'password',  
         'fst_message',  'return_foot_message','second_message', 'condition_message', 'confirmation_mail', 'chara_image',
-        'self_promotion', 'height', 'body_shape', 'blood_type', '_type', 'detail_activity_area', 'relationship_status',
+        'self_promotion', 'age', 'height', 'body_shape', 'blood_type', '_type', 'detail_activity_area', 'relationship_status',
         'gmail_address', 'gmail_password',
         'is_active', 'memo',
         ]
