@@ -440,7 +440,7 @@ class Ikukuru(models.Model):
   confirmation_mail = models.TextField(blank=True, null=True, verbose_name="メアド送信確認メッセージ")
   chara_image = models.ImageField(upload_to='chara_images/', null=True, blank=True, verbose_name="キャラ画像")
   self_promotion = models.TextField(blank=True, null=True, verbose_name="自己紹介")
-  age = models.CharField(max_length=10, choices=age_list, null=True, blank=True, verbose_name="年齢")
+  age = models.IntegerField(max_length=5,  null=True, blank=True, verbose_name="年齢")
   height = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="身長")
   body_shape = models.CharField(max_length=20, choices=body_shape_list, null=True, blank=True, verbose_name="スタイル")
   blood_type = models.CharField(max_length=5, choices=blood_type_list, null=True, blank=True, verbose_name="血液型")
