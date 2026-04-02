@@ -459,7 +459,7 @@ class Ikukuru(models.Model):
   alcohol = models.CharField(max_length=10, blank=True, null=True, verbose_name="お酒")
   children = models.CharField(max_length=10, blank=True, null=True, verbose_name="子供")
   free_time = models.CharField(max_length=10, blank=True, null=True, verbose_name="暇な時間")
-  favorite_body_shape = models.CharField(max_length=20,initial="指定なし",  verbose_name="好みのスタイル")
+  favorite_body_shape = models.CharField(max_length=20, default="指定なし", blank=True, verbose_name="好みのスタイル")
   cup = models.CharField(max_length=10,  null=True, blank=True, verbose_name="カップ")
   gmail_address = models.EmailField(null=True, blank=True, verbose_name="gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
