@@ -428,6 +428,10 @@ class Ikukuru(models.Model):
     ("巨乳", "巨乳"),
     ("ナイスバディ", "ナイスバディ"),
     ]
+  annual_income_list = [
+    ("100万円以下", "100万円以下"),("100～300万円", "100～300万円"),("300～600万円", "300～600万円"),
+    ("600～1000万円", "600～1000万円"),
+    ]
 
   name = models.CharField(max_length=30, blank=True, null=True, verbose_name="名前")
   user_id = models.ForeignKey(User, on_delete=models.CASCADE)  
@@ -447,6 +451,14 @@ class Ikukuru(models.Model):
   _type = models.CharField(max_length=30, blank=True, null=True, verbose_name="あなたのタイプ")
   detail_activity_area = models.CharField(max_length=10, blank=True, null=True, verbose_name="よく遊ぶ地域")
   relationship_status = models.CharField(max_length=10, blank=True, null=True, verbose_name="交際ステータス")
+  birth_place = models.CharField(max_length=10, blank=True, null=True, verbose_name="出身地")
+  job = models.CharField(max_length=20, blank=True, null=True, verbose_name="職業")
+  annual_income = models.CharField(max_length=20, choices=annual_income_list, null=True, blank=True, verbose_name="年収")
+  constellation = models.CharField(max_length=10, blank=True, null=True, verbose_name="星座")
+  tobacco = models.CharField(max_length=10, blank=True, null=True, verbose_name="タバコ")
+  alcohol = models.CharField(max_length=10, blank=True, null=True, verbose_name="お酒")
+  children = models.CharField(max_length=10, blank=True, null=True, verbose_name="子供")
+  free_time = models.CharField(max_length=10, blank=True, null=True, verbose_name="暇な時間")
   gmail_address = models.EmailField(null=True, blank=True, verbose_name="gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")
   is_active = models.BooleanField(default=True, verbose_name="アクティブ")
