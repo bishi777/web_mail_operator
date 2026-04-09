@@ -203,7 +203,7 @@ class JmailAdmin(admin.ModelAdmin):
     fields = [
         'user_id', 'name', 'login_id', 'password', 'post_title', 
         'post_contents', 'return_foot_message', 'fst_message', 'post_return_message',
-        'second_message',  'confirmation_mail',
+        'second_message',  'confirmation_mail', 'conditions_message',
         'chara_image','mail_address_image',
         'mail_address', 'gmail_password', 'things_interesting',
         'self_promotion', 'activity_area', 'detail_activity_area', 'age', 'job',
