@@ -259,7 +259,7 @@ admin.site.register(Jmail, JmailAdmin)
 class IkukuruAdmin(admin.ModelAdmin):
     list_display = ['name',  'login_mail_address', 'is_active','memo']
     fields = [
-        'user_id', 'name', 'login_mail_address', 'password',  
+        'user_id', 'name', 'login_mail_address', 'password',  'post_title','post_contents',
         'fst_message',  'return_foot_message','second_message', 'condition_message', 'confirmation_mail', 'chara_image',
         'self_promotion', 'age', 'height', 'body_shape', 'blood_type', '_type', 'detail_activity_area', 'relationship_status',
         'birth_place','job', 'annual_income', 'constellation', 'tobacco', 'alcohol','children','free_time',

@@ -437,6 +437,8 @@ class Ikukuru(models.Model):
   user_id = models.ForeignKey(User, on_delete=models.CASCADE)  
   login_mail_address = models.EmailField(null=True, blank=True, verbose_name="ログインメールアドレス")
   password = models.CharField(max_length=30, blank=True, null=True, verbose_name="ログインパスワード")
+  post_title = models.CharField(max_length=30, blank=True, null=True, verbose_name="掲示板タイトル")
+  post_content = models.TextField( blank=True, null=True, verbose_name="掲示板内容文")
   fst_message = models.TextField(blank=True, null=True, verbose_name="1stメール")
   return_foot_message = models.TextField(blank=True, null=True, verbose_name="足跡返し")
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
