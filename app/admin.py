@@ -130,7 +130,7 @@ class HappymailAdmin(admin.ModelAdmin):
         'post_return_message',  'second_message', 
         'condition_message', 'confirmation_mail',
         'self_promotion',
-        'mail_address', 'gmail_password',
+        'mail_address', 'gmail_password', 'mail_address_image',
         'chara_image', "age", "activity_area", "detail_activity_area",
         "birth_place", "blood_type", "constellation", "height",
         "style", "looks", "cup", "job", "education", "holiday",

@@ -129,6 +129,7 @@ class Happymail(models.Model):
   prof_search_height_max = models.CharField(max_length=10, choices=height_list, null=True, blank=True, verbose_name="プロフィール検索希望身長(上)")
   memo = models.TextField(blank=True, null=True, verbose_name="メモ")
   system_prompt = models.TextField(blank=True, null=True, verbose_name="システムプロンプト")
+  mail_address_image = models.ImageField(upload_to='chara_images/', null=True, blank=True, verbose_name="メルアド画像")
 
   def __str__(self):
     return self.name  # ここで表示したいフィールドを選択します
