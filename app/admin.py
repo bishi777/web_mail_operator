@@ -138,7 +138,7 @@ class HappymailAdmin(admin.ModelAdmin):
         "smoking", "sake", "car_ownership","roommate", 
         "brothers_and_sisters", "until_we_met","date_expenses", 
         "prof_search_area", "prof_search_youngest_age", "prof_search_oldest_age", "prof_search_height_min", "prof_search_height_max",
-        'system_prompt', 'beginner_flag',
+        'system_prompt', 'date_created',
         'is_active', 'memo'
         ]
 
