@@ -240,6 +240,7 @@ class Pcmax(models.Model):
   second_message = models.TextField(blank=True, null=True, verbose_name="2stメール")
   condition_message = models.TextField(blank=True, null=True, verbose_name="アドレス内1stメール")
   return_foot_message = models.TextField(blank=True, null=True, verbose_name="足跡返し")
+  rf_ai_intro_flug = models.BooleanField(default=True, verbose_name="足跡返しAI挨拶フラグ(True=AI挨拶あり/False=なし)")
   two_message_flug = models.BooleanField(default=False, verbose_name="2通メール送信フラグ")
   mail_address = models.EmailField(blank=True, null=True, verbose_name="Gmailアドレス")
   gmail_password = models.CharField(max_length=20,blank=True, null=True, verbose_name="Gmailパスワード")

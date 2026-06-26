@@ -79,7 +79,7 @@ class PcmaxAdmin(admin.ModelAdmin):
         'freetime', 'car_ownership', 'smoking', 'ecchiness_level', 'sake', 'process_before_meeting',
         'first_date_cost', 'travel', 'birth_place', 'education', 'annual_income', 'roommate',
         'marry', 'child', 'housework', 'sociability', 'fst_flug',
-        'two_message_flug',
+        'two_message_flug', 'rf_ai_intro_flug',
         'system_prompt', 'memo', 'is_active'
               )
 

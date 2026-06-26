@@ -1,1 +1,13 @@
 w_env/*
+
+# Python
+__pycache__/
+*.pyc
+
+# Django migrations
+# 本番DBスキーマは手動管理（DB_CHANGES.md 参照）。
+# 自動生成されるマイグレーションを除外し、本番migrate時の影響を防ぐ。
+# ※ 既にコミット済みの 0001〜0046 は追跡継続（履歴整合のため）。
+#   新規生成分(0047以降)のみ除外される。
+app/migrations/*.py
+!app/migrations/__init__.py
